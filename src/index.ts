@@ -30,8 +30,15 @@ type Tgrades = {[computedProperty: string]: number | 'undone'}
 // Интересно что с оценкой можно придумать, если оценки нет, всё равно можно оставить number и поставить 0
 type Tvisits = {[computedProperty: string]: boolean}
 
+type TBadgeTypeMap = Map<
+    ['single_fast', BadgeTypesEnum.COLOR],
+    ['single_standart', BadgeTypesEnum.COLOR],
+    ['double_fast', BadgeTypesEnum.MONO],
+    ['double_standart', BadgeTypesEnum.MONO]
+>
 class Student {
-    badgeTypeMap: Map<string, BadgeTypesEnum> = new Map([
+
+    badgeTypeMap: TBadgeTypeMap = new Map([
         ['single_fast', BadgeTypesEnum.COLOR],
         ['single_standart', BadgeTypesEnum.COLOR],
         ['double_fast', BadgeTypesEnum.MONO],
